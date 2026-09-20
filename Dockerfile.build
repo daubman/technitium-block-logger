@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
+COPY BlockLogger.csproj .
+RUN dotnet restore
+COPY . .
+RUN dotnet publish -c Release -o /out
+
+FROM scratch AS output
+COPY --from=build /out /
