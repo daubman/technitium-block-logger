@@ -46,17 +46,19 @@ Technitium's built-in query log viewer and are served by the standard
 
 ## Install
 
-Build a release zip (see below), then install it on your server. From the
-Technitium web console: **Apps → install from zip**, or via the API:
+A prebuilt zip is attached to each
+[release](https://github.com/daubman/technitium-block-logger/releases).
+Install it on your server straight from the release asset:
+
+```
+/api/apps/downloadAndInstall?name=Block+Logger&url=https://github.com/daubman/technitium-block-logger/releases/download/v1.1.0/BlockLogger.zip
+```
+
+or from the Technitium web console: **Apps → install from zip** with a
+locally downloaded copy, or via the API:
 
 ```
 POST /api/apps/install?name=Block+Logger   (multipart form, zip file in binary form data)
-```
-
-or, hosting the zip at a URL:
-
-```
-/api/apps/downloadAndInstall?name=Block+Logger&url=https://example.com/BlockLogger.zip
 ```
 
 Then select it under **Settings → Logging → Query Logger → Block Logger**.
